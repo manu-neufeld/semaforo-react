@@ -7,28 +7,37 @@ import PropTypes from "prop-types";
 import { TrafficLigths } from "./traffic-lights.jsx";
 
 export const TrafficBox = () => {
-	// const [turnedOff, setTurnedOff] = useState("");
 	const [redColor, setRedColor] = useState("");
 	const [yellowColor, setYellowColor] = useState("");
 	const [greenColor, setGreenColor] = useState("");
-
-	// class={"rounded-circle light " + redColor}
 
 	return (
 		<div className="rounded bg-dark box">
 			<div
 				class={"rounded-circle light " + redColor}
-				onClick={() => setRedColor("bg-danger")}>
+				onClick={() => {
+					setRedColor("bg-danger");
+					setYellowColor("");
+					setGreenColor("");
+				}}>
 				<TrafficLigths />
 			</div>
 			<div
 				class={"rounded-circle light " + yellowColor}
-				onClick={() => setYellowColor("bg-warning")}>
+				onClick={() => {
+					setYellowColor("bg-warning");
+					setRedColor("");
+					setGreenColor("");
+				}}>
 				<TrafficLigths />
 			</div>
 			<div
 				class={"rounded-circle light " + greenColor}
-				onClick={() => setGreenColor("bg-success")}>
+				onClick={() => {
+					setRedColor("");
+					setYellowColor("");
+					setGreenColor("bg-success");
+				}}>
 				<TrafficLigths />
 			</div>
 		</div>
