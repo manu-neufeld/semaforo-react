@@ -1,10 +1,4 @@
-import React, { useState, useEffect } from "react";
-
-import ReactDOM from "react-dom";
-
-import PropTypes from "prop-types";
-
-import { TrafficLigths } from "./traffic-lights.jsx";
+import React, { useState } from "react";
 
 export const TrafficBox = () => {
 	const [redColor, setRedColor] = useState("");
@@ -19,33 +13,24 @@ export const TrafficBox = () => {
 					setRedColor("bg-danger");
 					setYellowColor("");
 					setGreenColor("");
-				}}>
-				<TrafficLigths />
-			</div>
+				}}
+			/>
 			<div
 				class={"rounded-circle light " + yellowColor}
 				onClick={() => {
 					setYellowColor("bg-warning");
 					setRedColor("");
 					setGreenColor("");
-				}}>
-				<TrafficLigths />
-			</div>
+				}}
+			/>
 			<div
 				class={"rounded-circle light " + greenColor}
 				onClick={() => {
 					setRedColor("");
 					setYellowColor("");
 					setGreenColor("bg-success");
-				}}>
-				<TrafficLigths />
-			</div>
+				}}
+			/>
 		</div>
 	);
-};
-
-TrafficBox.propTypes = {
-	redLigth: PropTypes.string,
-	yellowLigth: PropTypes.string,
-	greenLight: PropTypes.string
 };
