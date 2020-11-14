@@ -6,9 +6,9 @@ export const TrafficBox = () => {
 	const [greenColor, setGreenColor] = useState("");
 
 	return (
-		<div className="rounded bg-dark box">
+		<div className="box">
 			<div
-				class={"rounded-circle light " + redColor}
+				className={"rounded-circle light " + redColor}
 				onClick={() => {
 					setRedColor("bg-danger");
 					setYellowColor("");
@@ -16,7 +16,7 @@ export const TrafficBox = () => {
 				}}
 			/>
 			<div
-				class={"rounded-circle light " + yellowColor}
+				className={"rounded-circle light " + yellowColor}
 				onClick={() => {
 					setYellowColor("bg-warning");
 					setRedColor("");
@@ -24,7 +24,7 @@ export const TrafficBox = () => {
 				}}
 			/>
 			<div
-				class={"rounded-circle light " + greenColor}
+				className={"rounded-circle light " + greenColor}
 				onClick={() => {
 					setRedColor("");
 					setYellowColor("");
